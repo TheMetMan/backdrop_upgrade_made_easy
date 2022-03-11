@@ -4,4 +4,4 @@
   gather_facts: true
   tasks:
     - name: Script to check for no update or upgrade git branches on local
-      ansible.builtin.script: /home/francis/ansible/backdrop_upgrade_made_easy/backdrop_step_1.sh local
+      ansible.builtin.script: ~/ansible/backdrop_upgrade_made_easy/backdrop_step_1.sh local
