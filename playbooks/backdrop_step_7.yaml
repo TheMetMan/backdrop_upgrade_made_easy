@@ -1,0 +1,7 @@
+# PlayBook to execute Stage 7 in the Backdrop Upgrade
+#
+- hosts: backdrop_servers_local
+  gather_facts: true
+  tasks:
+    - name: Scrip Git checkout Master and Merge Upgrade and Delete Upgrade and Git Push to remote
+      ansible.builtin.script: /home/francis/ansible/backdrop_upgrade_made_easy/backdrop_step_7.sh local

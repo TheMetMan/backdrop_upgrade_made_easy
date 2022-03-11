@@ -1,0 +1,7 @@
+# PlayBook to execute Stage 3 in the Backdrop Upgrade
+#
+- hosts: backdrop_servers_local
+  gather_facts: true
+  tasks:
+    - name: Script to create a Git Repo 'Upgrade' and Pull from Repo to match Prod
+      ansible.builtin.script: /home/francis/ansible/backdrop_upgrade_made_easy/backdrop_step_3.sh local

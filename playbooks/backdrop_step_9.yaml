@@ -1,0 +1,7 @@
+# PlayBook to execute Stage 9 in the Backdrop Upgrade
+#
+- hosts: backdrop_servers_remote
+  gather_facts: true
+  tasks:
+    - name: Scrip Git checkout Master and Merge Upgrade and Delete Upgrade to tidy up on all remotes
+      ansible.builtin.script: /home/francis/ansible/backdrop_upgrade_made_easy/backdrop_step_9.sh

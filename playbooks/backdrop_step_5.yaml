@@ -1,0 +1,7 @@
+# PlayBook to execute Stage 5 in the Backdrop Upgrade
+#
+- hosts: backdrop_servers_local
+  gather_facts: true
+  tasks:
+    - name: Script to Upgrade Core and any active Modules should they need it
+      ansible.builtin.script: /home/francis/ansible/backdrop_upgrade_made_easy/backdrop_step_5.sh local
