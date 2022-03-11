@@ -2,7 +2,7 @@
 
 ## Prequisites
 
-You will need to have Git, Ansible and Drush 8 with [Backdrop Extensions](https://github.com/backdrop-contrib/backdrop-drush-extension) installed. Ansible Documentation is here
+You will need to have Git, Ansible and Drush 8 with [Backdrop Extensions](https://github.com/backdrop-contrib/backdrop-drush-extension) installed. Ansible Documentation is [here](https://docs.ansible.com/ansible/latest/index.html)
 
 With Ansible you will need to have your own Ansible Hosts File setup for the Local, Dev and Prod Servers and correct the scripts accordingly. They do not need Sudo, just run as a normal user, but you will need ssh keys setup on the remote and local servers for paswordless login.
 
@@ -17,7 +17,7 @@ It is useful to have a standard naming convention, so I use <SiteName>.local, <S
 
 My Local Sites are on a local server and the Dev and Prod on remote servers.
 
-I have created Bash Scripts to export and import the site configuration and database. Also to upgrade core and modules. These can be found on github here as well.
+I have created Bash Scripts to export and import the site configuration and database. Also to upgrade core and modules. These can be found on github [here](https://github.com/TheMetMan/backdrop-web-install) as well.
 
 ## Automation and Streamlining:
 
