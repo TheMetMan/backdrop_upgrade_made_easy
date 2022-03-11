@@ -28,7 +28,8 @@ In more detail:
 1. Check that there are NO Git Branches called Update or Upgrade on Local and Remote Servers.
     ~/ansible/backdrop\_upgrade\_made\_easy/backdrop\_run\_step_1.sh
 2. ExportConfigSync on Prod Site and Git Push to Repo.
-    ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_2.sh
+    
+~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_2.sh
 3. Create Git upgrade Branch on Local and Git Pull from Remote. Then ImportConfigSync.
     ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_3.sh
 4. Test Local Sites are OK.
