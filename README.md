@@ -1,6 +1,6 @@
 # Backdrop Upgrade Made Easy
 
-## Prequesites
+## Prequisites
 
 You will need to have Git, Ansible and Drush 8 with Backdrop Extensions installed. Ansible Documentation is here
 
