@@ -17,7 +17,8 @@ It is useful to have a standard naming convention, so I use <SiteName>.local, <S
 
 My Local Sites are on a local server and the Dev and Prod on remote servers.
 
-I have created Bash Scripts to export and import the site configuration and database. Also to upgrade core and modules. These can be found on github [here](https://github.com/TheMetMan/backdrop-web-install) as well.
+*IMPORTANT!*
+I have created Bash Scripts to export and import the site configuration and database. Also to upgrade core and modules. These can be found on github [here](https://github.com/TheMetMan/backdrop-web-install) as well. See that project for more information.
 
 ## Automation and Streamlining:
 
