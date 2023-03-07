@@ -2,7 +2,7 @@
 
 ## Prequisites
 
-You will need to have Git, Ansible and Drush 8 with [Backdrop Extensions](https://github.com/backdrop-contrib/backdrop-drush-extension) installed. Ansible Documentation is [here](https://docs.ansible.com/ansible/latest/index.html)
+You will need to have Git, Ansible and Bee (https://github.com/backdrop-contrib/bee) installed. Ansible Documentation is [here](https://docs.ansible.com/ansible/latest/index.html)
 
 With Ansible you will need to have your own Ansible Hosts File setup for the Local, Dev and Prod Servers and correct the scripts accordingly. They do not need Sudo, just run as a normal user, but you will need ssh keys setup on the remote and local servers for paswordless login.
 
