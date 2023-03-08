@@ -7,7 +7,7 @@ pattern="$1"
 result=0
 for _dir in "${HOME}"/apps/*"${pattern}"; do
 	echo "${_dir}"
-        cd "${_dir}"
+        cd "${_dir}" || exit
 	echo "Merging to Master"
 	git checkout master
 	git merge upgrade

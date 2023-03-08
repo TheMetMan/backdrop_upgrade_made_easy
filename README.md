@@ -1,10 +1,10 @@
 # Backdrop Upgrade Made Easy
 
-## Prequisites
+## Prerequisites
 
 You will need to have Git, Ansible and Bee (https://github.com/backdrop-contrib/bee) installed. Ansible Documentation is [here](https://docs.ansible.com/ansible/latest/index.html)
 
-With Ansible you will need to have your own Ansible Hosts File setup for the Local, Dev and Prod Servers and correct the scripts accordingly. They do not need Sudo, just run as a normal user, but you will need ssh keys setup on the remote and local servers for paswordless login.
+With Ansible, you will need to have your own Ansible Hosts File setup for the Local, Dev and Prod Servers and correct the scripts accordingly. They do not need Sudo, just run as a normal user, but you will need ssh keys setup on the remote and local servers for password less login.
 
 ## To upgrade I follow this workflow:
 
@@ -18,7 +18,7 @@ It is useful to have a standard naming convention, so I use <SiteName>.local, <S
 My Local Sites are on a local server and the Dev and Prod on remote servers.
 
 *IMPORTANT!*
-I have created Bash Scripts to export and import the site configuration and database. Also to upgrade core and modules. These can be found on github [here](https://github.com/TheMetMan/backdrop-web-install) as well. See that project for more information.
+I have created Bash Scripts to export and import the site configuration and database. Also, to upgrade core and modules. These can be found on GitHub [here](https://github.com/TheMetMan/backdrop-web-install) as well. See that project for more information.
 
 ## Automation and Streamlining:
 
@@ -33,7 +33,8 @@ In more detail:
 ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_2.sh
 3. Create Git upgrade Branch on Local and Git Pull from Remote. Then ImportConfigSync.  
     ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_3.sh
-4. Test Local Sites are OK.
+4. Test Local Sites are OK, then clean up.  
+   ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_4.sh
 5. Upgrade Core and any modules then ExportConfigSync and Git Commit Upgrade.  
     ~/ansible/backdrop_upgrade_made_easy/backdrop_run_step_5.sh
 6. Test Local Sites are OK.

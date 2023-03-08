@@ -8,7 +8,7 @@ PATH=$HOME/.local/bin:$HOME/bin:$PATH
 pattern="$1"
 result=0
 for _dir in "${HOME}"/apps/*"${pattern}"; do
-        cd "${_dir}"
+        cd "${_dir}" || exit
         branch=$(git branch | grep up)
         if [[ $branch ]]; then
            echo "${_dir}"

@@ -10,7 +10,7 @@ for pattern in "${patterns[@]}"; do
     for _dir in "${HOME}"/apps/*"${pattern}"; do
 	# echo "Pattern = ${pattern}"
 	echo "Directory = ${_dir}"
-        cd "${_dir}"
+        cd "${_dir}" || exit
 	git status
 	git checkout master
 	git merge upgrade

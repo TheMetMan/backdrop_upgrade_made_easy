@@ -1,0 +1,7 @@
+# PlayBook to execute Stage 4 in the Backdrop Upgrade
+#
+- hosts: backdrop_servers_local
+  gather_facts: true
+  tasks:
+    - name: Script to Cleanup temporary folders after Core Upgrade
+      ansible.builtin.script: ~/ansible/backdrop_upgrade_made_easy/backdrop_step_4.sh local

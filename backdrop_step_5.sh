@@ -7,35 +7,40 @@
 PATH=$HOME/.local/bin:$HOME/bin:$PATH
 pattern="$1"
 result=0
-TEMP_FOLDER="/dev/shm/backdrop"
 
 for _dir in "${HOME}"/apps/*"${pattern}"; do
 	echo "${_dir}"
-  cd "${_dir}"
+  cd "${_dir}" || exit
 	FOLDER=$(basename "$PWD")
 #	echo "${FOLDER}"
 	./backupEssentials "${FOLDER}" 
-  cd "${_dir}/web"
-	echo "Upgrade Core"
-	if [ -d "${TEMP_FOLDER}" ]; then
-    rm -fr "${TEMP_FOLDER}"
+  cd "${_dir}/web" || exit
+	# ------------------------------------------------------------
+  echo "Checking Upgrade Core is REALLY necessary"
+  mkdir "/dev/shm/core_tmp"
+  bee dl-core "/dev/shm/core_tmp"
+  read -ra latest_array <<< $(cat "/dev/shm/core_tmp/core/profiles/standard/standard.info" | grep 'version = 1')
+  echo "${latest_array[2]}"
+  if [ "${latest_array[2]}" != "${version}" ]; then
+    echo "Upgrading Core"
+    mv core "core_${version}"
+    mv /dev/shm/core_tmp/core .
+  else
+    echo "Core Upgrade Not Necessary"
   fi
-  mkdir "${TEMP_FOLDER}"
-  bee dl-core /dev/shm/backdrop
-  # rm -fr core
-  mv core "core_${version}"
-  rsync -arz "${TEMP_FOLDER}/core" .
+  rm -fr /dev/shm/core_tmp
   echo ""
 	echo "Upgrade Modules & Themes"
 	bee update -y
 	echo ""
 	bee updb -y
   bee cc all
-  cd "${_dir}"
+  cd "${_dir}" || exit
 	./exportConfigSync
 	git add -A
 	git commit -am "Upgraded Backdrop Core & Modules as required"
 done
-echo "Now check that all is well with the site before merging and pushing to dev & prod"
+echo "Now check that all is well with the site before deleting the core_${version} folder"
+echo "THen merging and push to dev & prod"
 exit ${result}
 

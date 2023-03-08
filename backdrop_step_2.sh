@@ -11,7 +11,7 @@ pattern="$1"
 # pattern="lab_dev"
 for _dir in "${HOME}"/apps/*"${pattern}"*; do
 	echo "${_dir}"
-	cd "${_dir}"
+	cd "${_dir}" || exit
 	git status
 	./exportConfigSync
 	git add -A
