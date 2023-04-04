@@ -9,16 +9,18 @@ With Ansible, you will need to have your own Ansible Hosts File setup for the Lo
 
 ## To upgrade I follow this workflow:
 
-- Sync Prod to Local and test
+- Export Prod and push to git repo
+- Pull repo to Local, import and test
 - Upgrade Local and test
-- Sync Dev to Local and test
-- Sync Prod to Local and test
+- Push Local to git repo
+- Pull repo to Dev and test
+- Pull repo to Prod and test
 
 It is useful to have a standard naming convention, so I use <SiteName>.local, <SiteName>dev and <SiteName>prod
 
 My Local Sites are on a local server and the Dev and Prod on remote servers.
 
-*IMPORTANT!*
+*IMPORTANT! You will need these scripts*
 I have created Bash Scripts to export and import the site configuration and database. Also, to upgrade core and modules. These can be found on GitHub [here](https://github.com/TheMetMan/backdrop-web-install) as well. See that project for more information.
 
 ## Automation and Streamlining:
@@ -26,7 +28,7 @@ I have created Bash Scripts to export and import the site configuration and data
 I have a GitHub repository with my Scripts and Playbooks here
 
 Follow each step of the workflow laid out below to upgrade all the sites.
-In more detail:
+So in more detail:
 
 1. Check that there are NO Git Branches called Update or Upgrade on Local and Remote Servers.  
     ~/ansible/backdrop\_upgrade\_made\_easy/backdrop\_run\_step_1.sh
@@ -54,5 +56,5 @@ In more detail:
 
 ## Important:
 
-After each step above, the output can be copied and pasted from the Terminal into a simple text editor, and all the '\r\n' characters replaced by '\n' to see the correct formatting, then looked through quickly to see if there were any errors.
+After each step above, the output is logged and can be looked through quickly to see if there were any errors.
 
