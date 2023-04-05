@@ -4,7 +4,7 @@
 #
 SECONDS=0
 cd "${HOME}/ansible" || exit
-logfile="Logs/backdrop_step_7.log"
+logfile="${HOME}/ansible/Logs/backdrop_step_7.log"
 ansible-playbook ~/ansible/backdrop_upgrade_made_easy/playbooks/backdrop_step_7.yaml -v 2>&1 | tee "${logfile}"
 # Tidy up Line Feeds
 sed -i 's/\\r\\n/\n/g' "${logfile}"

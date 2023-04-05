@@ -5,7 +5,7 @@
 # Reset BASH time counter
 SECONDS=0
 cd "${HOME}/ansible" || exit
-logfile="Logs/backdrop_step_1.log"
+logfile="${HOME}/ansible/Logs/backdrop_step_1.log"
 echo "Running Playbook for Remote Prod"
 ansible-playbook ~/ansible/backdrop_upgrade_made_easy/playbooks/backdrop_step_1_remote_prod.yaml 2>&1 | tee "${logfile}"
 echo "Running Playbook for Remote Dev"
